@@ -7,4 +7,6 @@ GIORNO 1
 GIORNO 2 
 - Standup meeting di 5 minuti,con annessa spiegazione delle cose al prof.
 - Abbiamo rifatto le User Story.
-- Iniziato a lavorare.
+- Iniziato a lavorare (Pippo).
+
+
