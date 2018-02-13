@@ -8,5 +8,8 @@ GIORNO 2
 - Standup meeting di 5 minuti,con annessa spiegazione delle cose al prof.
 - Abbiamo rifatto le User Story.
 - Iniziato a lavorare (Pippo, Java).
+- Nella giornata di oggi abbiamo creato le pagine del sito senza usare nessuna grafica, solo per testare il tutto. Nei prossimi giorni       aggiungeremo la grafica.
+
+
 
 
