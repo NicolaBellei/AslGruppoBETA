@@ -1,0 +1,9 @@
+Oggi 13 febbraio abbiamo avuto i seguenti problemi: 
+- Poco sviluppo di codice. 
+- Poche cose concrete.
+- Molto tempo dedicato a Pippo.
+
+La prossima volta:
+- Ci concentreremo più sul codice che sul sito.
+- Iniziamo a scrivere il database.
+ 
