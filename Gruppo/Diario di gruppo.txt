@@ -1,10 +1,10 @@
 GIORNO 1 
--Presentazione del progetto da fare e suddivisione dei compiti.
--Sguardo generale al progetto, inizo della scrittura delle User Story.
--Iniziato a scrivere esempi per il progetto e a lavorare seriamente.
--Alla fine della sesta ora abbiamo consegnato su moodle la consegna prevista per quel giorno.
+- Presentazione del progetto da fare e suddivisione dei compiti.
+- Sguardo generale al progetto, inizo della scrittura delle User Story.
+- Iniziato a scrivere esempi per il progetto e a lavorare seriamente.
+- Alla fine della sesta ora abbiamo consegnato su moodle la consegna prevista per quel giorno.
 
 GIORNO 2 
--Standup meeting di 5 minuti,con annessa spiegazione delle cose al prof.
--Abbiamo rifatto le User Story.
--Iniziato a lavorare.
+- Standup meeting di 5 minuti,con annessa spiegazione delle cose al prof.
+- Abbiamo rifatto le User Story.
+- Iniziato a lavorare.
