@@ -8,25 +8,19 @@ import com.google.gson.Gson;
  * @author m.santosuosso
  */
 public class Persona {
-    int id;
+    int idpersona;
     String nome;
     String cognome;
-    int numTel;
     String mail;
-    
-    public Persona(int id, String nome, String cognome, int numTel, String mail) {
-        this.id = id;
+    int numero;
+
+    public Persona(int idpersona, String nome, String cognome, String mail, int numero) {
+        this.idpersona = idpersona;
         this.nome = nome;
         this.cognome = cognome;
-        this.numTel = numTel;
         this.mail = mail;
+        this.numero = numero;
     }
 
-    public Persona() {
-    }
-    
-    public void export() {
-        Gson json = new Gson();
-        json.toJson(this);
-    }
+    public Persona() {};
 }

@@ -1,17 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package database;
+
+import java.util.List;
 
 /**
  *
  * @author m.santosuosso
  */
-public class DataBase {
-    Persona persona = new Persona();
-    Azienda azienda = new Azienda();
-    
-    
+public class DataBase extends Persona {
+    int idazienda;
+    String azienda;
+    List<Persona> persone = (List<Persona>) new Persona();
+
+    public DataBase(int idazienda, String azienda) {
+        this.idazienda = idazienda;
+        this.azienda = azienda;
+    }
+
+    public DataBase() {};
 }
