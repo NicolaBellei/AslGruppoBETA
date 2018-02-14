@@ -1,6 +1,13 @@
 package database;
 
+import com.google.gson.Gson;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
+
+
 
 /**
  *
@@ -17,4 +24,11 @@ public class DataBase extends Persona {
     }
 
     public DataBase() {};
+    
+    public Gson leggi(File file) throws FileNotFoundException{
+        Gson json = new Gson();
+        FileReader fis = new FileReader(file);
+        
+        return json;
+    }
 }
