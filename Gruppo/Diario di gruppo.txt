@@ -10,6 +10,12 @@ GIORNO 2
 - Iniziato a lavorare (Pippo, Java).
 - Nella giornata di oggi abbiamo creato le pagine del sito senza usare nessuna grafica, solo per testare il tutto. Nei prossimi giorni       aggiungeremo la grafica.
 
+GIORNO 3 
+- Standup meeting di 5 minuti.
+- Abbiamo inziato a scrivere del codice.
+- Abbiamo perfezionato la parte che riguarda l'html e il css.
 
-
-
+GIORNO 4 (Giornta più positiva fino ad oggi)
+- Standup meeting di 5 minuti.
+- Scritto molto codice java, html, css, javascript (Quasi tutto funzionante).
+- Soddisfatte abbastanza User Story.
