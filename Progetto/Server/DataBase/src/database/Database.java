@@ -26,13 +26,12 @@ public class Database {
         writer.write(toJson);    
     }
     
-    
-   public void aggiungi(ArrayList a) throws IOException{
-       ArrayList temp = new ArrayList();
-       
-       leggi("json/azienda.json", a);
-       leggi("json/aggiungi.json", temp);
-       a.add(Arrays.asList(temp));
-       scrivi("json/mest.json", a);
-   }
+    public void aggiungi(ArrayList a) throws IOException{
+        ArrayList temp = new ArrayList();
+
+        leggi("json/azienda.json", a);
+        leggi("json/aggiungi.json", temp);
+        a.add(Arrays.asList(temp));
+        scrivi("json/mest.json", a);
+    }
 }
