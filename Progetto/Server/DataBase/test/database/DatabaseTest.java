@@ -12,7 +12,7 @@ public class DatabaseTest {
     public void testScriviELeggi() throws Exception {
         Database Db = new Database();
         String json = "[{\"idazienda\":\"2\",\"azienda\":\"Grifondoro\",\"persone\":[{\"idpersona\":\"2\",\"nome\":\"Harry\",\"cognome\":\"Potter\",\"email\":\"harry.potter@grifondoro.it\"}]}]";
-        Db.scrivi("Prova", json);
+        Database.scrivi("Prova", json);
         
         assertEquals(json, Db.leggi("Prova"));
     }
