@@ -3,14 +3,20 @@ package database;
 import java.util.ArrayList;
 
 public class Azienda {
-    static String idazienda;
+    private int idazienda;
     private String azienda;
     private ArrayList<Persona> persone;
 
     public Azienda() {
     }
 
+    public Azienda(int idazienda, String azienda) {
+        this.idazienda = idazienda;
+        this.azienda = azienda;
+        persone.set(0, new Persona());
+    }
+    
     public void aggiungiPersona(Persona pers) {
-        persone.add(pers);
+        persone.set(pers.getIdpersona(), pers);
     }
 }

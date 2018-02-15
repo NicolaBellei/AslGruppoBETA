@@ -12,7 +12,7 @@ public class DatabaseTest {
     public void testScriviELeggi() throws Exception {
         Database Db = new Database();
         String json = "[{\"idazienda\":\"2\",\"azienda\":\"Grifondoro\",\"persone\":[{\"idpersona\":\"2\",\"nome\":\"Harry\",\"cognome\":\"Potter\",\"email\":\"harry.potter@grifondoro.it\"}]}]";
-        Database.scrivi("Prova", json);
+        Db.scrivi("Prova", json);
         
         assertEquals(json, Db.leggi("Prova"));
     }
@@ -23,6 +23,11 @@ public class DatabaseTest {
      */
     @Test
     public void testAggiungiPersona() throws Exception {
-        Database Db = new Database();
+        /*Database Db = new Database();
+        Db.aziende.set(0, new Azienda(0, "Pippo.srl"));
+        Persona pers = new Persona(0, "Gianni", "Pippo", "www.www@www.com");
+        Db.aggiungiPersona(Db.aziende.get(0), pers);
+        
+        assertEquals(pers, Db.aziende.get(0));*/
     }
 }

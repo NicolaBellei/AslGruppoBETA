@@ -15,6 +15,10 @@ public class Persona  {
         this.cognome = cognome;
         this.email = email;
     }
+
+    public int getIdpersona() {
+        return idpersona;
+    }
     
     public String toJson() {
         return "{\"idpersona\":\"" + idpersona + "\",\"nome\":\"" + nome + "\",\"cognome\":\"" + cognome + "\",\"email\":\"" + email + "\"}";
