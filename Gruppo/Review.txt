@@ -11,7 +11,7 @@ La prossima volta:
 14 febbraio
 Review fatta dal prof
 
-15 febbraio
+15 febbraio - Creazione di poco WIP e rispetto di quasi tutte le task assegnate
 Problemi:
 - Enorme ritardo sulla tabella di marcia, sopratutto in Java
 - Non ci siamo ancora preoccupati di comunicare con gli altri gruppi per ricevere i dati
