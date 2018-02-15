@@ -1,54 +1,31 @@
 package database;
 
-import com.google.gson.Gson;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Database {
-    public static ArrayList<Azienda> az = new ArrayList<>;    
-
+    ArrayList<Azienda> aziende;
+    
     public Database() {
     }
     
-    public Gson leggi(String nomeFile) throws IOException{
-        Gson json = new Gson();
-        Reader reader = new FileReader(nomeFile);
+    public String leggi(String nomeFile) throws IOException, ClassNotFoundException{
+        File file = new File(nomeFile + ".json");
+        FileInputStream fis = new FileInputStream(file);
+        ObjectInputStream ois = new ObjectInputStream(fis);
         
-        Database.az = json.fromJson(reader, Azienda[].class);
-        return az;
+        return (String) ois.readObject();
     }
     
-    public void scrivi(String file, String str) throws IOException{ 
-        Gson json = new Gson();
-        String toJson = json.toJson(az);
-        FileWriter writer = new FileWriter(file);
-        writer.write(json);    
+    public void scrivi(String nomeFile, String json) throws IOException {
+        File file = new File(nomeFile + ".json", "a");
+        FileOutputStream fos = new FileOutputStream(file);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        
+        oos.writeObject(json);
     }
     
-    public void scrivi(String file, Gson json) throws IOException{
-        String toJson = json.toJson(az);
-        FileWriter writer = new FileWriter(file);
-        writer.write(json);    
-    }
-    
-    public void aggiungi(ArrayList a) throws IOException{
-        ArrayList temp = new ArrayList();
-
-        leggi("json/azienda.json");
-        leggi("json/aggiungi.json");
-        a.add(Arrays.asList(temp));
-        scrivi("json/mest.json");
-    }
-
-    void scrivi(String provajson, String idazienda2aziendaGrifondoropersoneidperso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void scrivi(String provajson, String idazienda2aziendaGrifondoropersoneidperso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void aggiungiPersona(Azienda azienda, Persona persona) throws IOException {
+        azienda.aggiungiPersona(persona);
     }
 }

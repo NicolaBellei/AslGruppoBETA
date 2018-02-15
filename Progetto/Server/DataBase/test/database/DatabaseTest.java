@@ -1,13 +1,5 @@
 package database;
 
-import com.google.gson.Gson;
-import java.io.File;
-import java.io.FileReader;
-import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,32 +9,20 @@ public class DatabaseTest {
      * @throws java.lang.Exception
      */
     @Test
-    public void testScrivi() throws Exception {
+    public void testScriviELeggi() throws Exception {
         Database Db = new Database();
+        String json = "[{\"idazienda\":\"2\",\"azienda\":\"Grifondoro\",\"persone\":[{\"idpersona\":\"2\",\"nome\":\"Harry\",\"cognome\":\"Potter\",\"email\":\"harry.potter@grifondoro.it\"}]}]";
+        Db.scrivi("Prova", json);
         
-        Db.scrivi("Prova.json", "[{\"idazienda\":\"2\",\"azienda\":\"Grifondoro\",\"persone\":[{\"idpersona\":\"2\",\"nome\":\"Harry\",\"cognome\":\"Potter\",\"email\":\"harry.potter@grifondoro.it\"}]}]");
-        
-    }
-    
-    /**
-     * Test of leggi method, of class Database.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testLeggi() throws Exception {
-        Database Db = new Database();
-        
-        Gson json = Db.leggi("Prova.json");
-        
+        assertEquals(json, Db.leggi("Prova"));
     }
 
     /**
-     * Test of aggiungi method, of class Database.
+     * Test of aggiungiPersona method, of class Database.
      * @throws java.lang.Exception
      */
     @Test
-    public void testAggiungi() throws Exception {
-        
+    public void testAggiungiPersona() throws Exception {
+        Database Db = new Database();
     }
-
 }
