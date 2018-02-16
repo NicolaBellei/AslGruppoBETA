@@ -19,3 +19,7 @@ GIORNO 4 (Giornta più positiva fino ad oggi)
 - Standup meeting di 5 minuti.
 - Scritto molto codice java, html, css, javascript (Quasi tutto funzionante).
 - Soddisfatte abbastanza User Story.
+
+GIORNO 5 (Conclusione)
+- Conlcusione della parte html, css, java, javascript.
+- Riusciti a salvare sul file tutto il database in una volta sola.
