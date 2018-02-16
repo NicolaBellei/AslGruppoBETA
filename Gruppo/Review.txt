@@ -8,8 +8,12 @@ La prossima volta:
 - Ci concentreremo più sul codice che sul sito.
 - Iniziamo a scrivere il database.
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 14 febbraio
 Review fatta dal prof
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 15 febbraio - Creazione di poco WIP e rispetto di quasi tutte le task assegnate
 Problemi:
@@ -20,3 +24,12 @@ La prossima volta:
 - Concentrazione su Java
 - Concentrazione sulla parte applicativa del Js
 - Fare in modo che funzioni in locale
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+16 febbraio - Inevitabile ritardo
+- Molti problemi "dell'ultimo minuto"
+- Sviluppo di molti metodi ma poco di concreto
+- Integrazione sito fallita
+- Comunicazione Pippo fallita
+- RIP gruppo beta
