@@ -3,6 +3,8 @@ package database;
 import com.google.gson.Gson;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Database {
     public ArrayList<Azienda> aziende = new ArrayList<>();
@@ -16,32 +18,29 @@ public class Database {
     }
     
     public String leggi(String nomeFile) throws IOException{
-        RandomAccessFile raf = new RandomAccessFile(nomeFile + ".json", "r");
-        return raf.readLine();
+        String lettura;
+        try (RandomAccessFile raf = new RandomAccessFile(nomeFile + ".json", "r")) {
+            lettura = raf.readLine();
+        }
+        return lettura;
     }
     
     public void scrivi(String nomeFile, String json) throws IOException{
-        RandomAccessFile raf = new RandomAccessFile(nomeFile + ".json", "rw");
-        raf.write(json.getBytes());
+        try (RandomAccessFile raf = new RandomAccessFile(nomeFile + ".json", "rw")) {
+            raf.write(json.getBytes());
+            raf.close();
+        }
+    }
+    
+    public void elimina(String nomeFile) {
+        File file = new File(nomeFile + ".json", "rw");
+        System.out.println(file.delete());
     }
     
     public void salva() throws IOException{
         this.scrivi(nome_file, this.toJson());
     }
     
-    public void modifica() throws IOException{
-        String file = this.leggi(nome_file);
-        
-        
-        
-        this.scrivi(nome_file, file);
-    }
-    
-    public void elimina(String nomeFile) {
-        File file = new File(nomeFile);
-        file.delete();
-    }
-            
     public Database fromJson(String json) {
         Gson gson = new Gson();
         return null;
@@ -49,21 +48,27 @@ public class Database {
     
     public void aggiungiAzienda(String nome) throws IOException {
         aziende.add(new Azienda(aziende.lastIndexOf(aziende) + 1, nome));
-        
-        this.leggi(nome_file);
+        Collections.sort(aziende, (Azienda az1, Azienda az2) -> az1.azienda.compareTo(az2.azienda));
+        this.salva();
     }
     
     public void aggiungiAzienda(Azienda azienda) throws IOException {
         aziende.add(new Azienda(azienda));
-        
-        this.leggi(nome_file);
+        Collections.sort(aziende, (Azienda az1, Azienda az2) -> az1.azienda.compareTo(az2.azienda));
+        this.salva();
     }
     
     public String toJson() {
         String json = "[";
-        for (Azienda az : aziende) {
-            json = json + az.toJson();
+        String temp = json;
+        
+        for (Azienda i : aziende) {
+            json = json + i.toJson();
+            temp = json;
+            json += ",";
         }
+        
+        json = temp;
         json += "]";
         
         return json;
@@ -71,9 +76,10 @@ public class Database {
     
     public void aggiungiPersona(Azienda azienda, Persona persona) throws IOException {
         azienda.aggiungiPersona(persona);
+        this.salva();
     }
     
-    public void spedisciFile() {
+    public void spedisciFile() throws IOException {
         routeContext.send(this.leggi(nome_file));
     }
 }

@@ -2,6 +2,7 @@ package database;
 
 import com.google.gson.Gson;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Azienda {
     public int idazienda;
