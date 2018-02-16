@@ -23,3 +23,4 @@ GIORNO 4 (Giornta più positiva fino ad oggi)
 GIORNO 5 (Conclusione)
 - Conlcusione della parte html, css, java, javascript.
 - Riusciti a salvare sul file tutto il database in una volta sola.
+- Riusciti a collegare le varie pagine di html.
