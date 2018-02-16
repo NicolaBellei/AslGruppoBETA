@@ -1,5 +1,6 @@
 package database;
 
+import java.io.File;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -15,6 +16,7 @@ public class DatabaseTest {
         Db.scrivi("Prova", json);
         
         assertEquals(json, Db.leggi("Prova"));
+        Db.elimina("Prova");
     }
 
     /**
@@ -41,6 +43,20 @@ public class DatabaseTest {
         Db.aggiungiPersona(azienda, pers2);
         Db.salva();
         
-        assertEquals("[{\"idazienda\":\"2\",\"azienda\":\"Grifondoro\",\"persone\":[{\"idpersona\":\"2\",\"nome\":\"Harry\",\"cognome\":\"Potter\",\"email\":\"harry.potter@grifondoro.it\"},{\"idpersona\":\"3\",\"nome\":\"Ron\",\"cognome\":\"Weasley\",\"email\":\"ron.weasley@grifondoro.it\"}]]", Db.leggi("Database"));
+        String json = "[{\"idazienda\":\"2\",\"azienda\":\"Grifondoro\",\"persone\":[{\"idpersona\":\"2\",\"nome\":\"Harry\",\"cognome\":\"Potter\",\"email\":\"harry.potter@grifondoro.it\"},{\"idpersona\":\"3\",\"nome\":\"Ron\",\"cognome\":\"Weasley\",\"email\":\"ron.weasley@grifondoro.it\"}]]";
+        assertEquals(json, Db.leggi("Database"));
+        Db.elimina("Database");
+    }
+    
+    @Test
+    public void testFromJson() throws Exception {
+        String json = "[{\"idazienda\":\"2\",\"azienda\":\"Grifondoro\",\"persone\":[{\"idpersona\":\"2\",\"nome\":\"Harry\",\"cognome\":\"Potter\",\"email\":\"harry.potter@grifondoro.it\"},{\"idpersona\":\"3\",\"nome\":\"Ron\",\"cognome\":\"Weasley\",\"email\":\"ron.weasley@grifondoro.it\"}]";
+        
+        Database Db = new Database();
+        Db.aziende. = Db.fromJson(json);
+        Db.salva();
+        
+        assertEquals(2, Db.aziende.get(0).idazienda);
+        Db.elimina("Database");
     }
 }

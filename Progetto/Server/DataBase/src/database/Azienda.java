@@ -1,12 +1,12 @@
 package database;
 
+import com.google.gson.Gson;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Azienda {
-    private int idazienda;
-    private String azienda;
-    private ArrayList<Persona> persone = new ArrayList<>();
+    public int idazienda;
+    public String azienda;
+    public ArrayList<Persona> persone = new ArrayList<>();
 
 
     public Azienda() {
@@ -42,6 +42,15 @@ public class Azienda {
         json = temp + "]";
         
         return json;
+    }
+    
+    public Azienda[] fromJson(String json) {
+        Gson gson = new Gson();
+        
+        /*for (i = 0; i < this.azienda.length(); i++) {
+            
+        }*/
+        return null;
     }
     
     public void aggiungiPersona(Persona pers) {

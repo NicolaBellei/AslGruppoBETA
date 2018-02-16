@@ -1,10 +1,12 @@
 package database;
 
+import com.google.gson.Gson;
+
 public class Persona  {
-    private int idpersona;
-    private String nome;
-    private String cognome;
-    private String email;
+    public int idpersona;
+    public String nome;
+    public String cognome;
+    public String email;
 
     public Persona() {
     }
@@ -23,11 +25,13 @@ public class Persona  {
         this.email = pers.email;
     }
     
-    public int getIdpersona() {
-        return idpersona;
-    }
-    
     public String toJson() {
         return "{\"idpersona\":\"" + idpersona + "\",\"nome\":\"" + nome + "\",\"cognome\":\"" + cognome + "\",\"email\":\"" + email + "\"}";
+    }
+    
+    public Persona[] fromJson(String json) {
+        Gson gson = new Gson();
+        
+        return gson.fromJson(json, Persona[].class);
     }
 }

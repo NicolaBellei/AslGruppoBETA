@@ -1,10 +1,11 @@
 package database;
 
+import com.google.gson.Gson;
 import java.io.*;
 import java.util.ArrayList;
 
 public class Database {
-    ArrayList<Azienda> aziende = new ArrayList<>();
+    public ArrayList<Azienda> aziende = new ArrayList<>();
     final String nome_file = "Database";
     
     public Database() {
@@ -28,8 +29,22 @@ public class Database {
         this.scrivi(nome_file, this.toJson());
     }
     
-    public void fromJson(String json) {
+    public void modifica() throws IOException{
+        String file = this.leggi(nome_file);
         
+        
+        
+        this.scrivi(nome_file, file);
+    }
+    
+    public void elimina(String nomeFile) {
+        File file = new File(nomeFile);
+        file.delete();
+    }
+            
+    public Database fromJson(String json) {
+        Gson gson = new Gson();
+        return null;
     }
     
     public void aggiungiAzienda(String nome) throws IOException {
