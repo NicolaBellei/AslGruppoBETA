@@ -22,12 +22,25 @@ public class DatabaseTest {
      * @throws java.lang.Exception
      */
     @Test
-    public void testAggiungiPersona() throws Exception {
-        /*Database Db = new Database();
-        Db.aziende.set(0, new Azienda(0, "Pippo.srl"));
-        Persona pers = new Persona(0, "Gianni", "Pippo", "www.www@www.com");
-        Db.aggiungiPersona(Db.aziende.get(0), pers);
+    public void testToJson() throws Exception {
+        Persona persona = new Persona(2, "Harry", "Potter", "harry.potter@grifondoro.it");
+        Azienda azienda = new Azienda(2, "Grifondoro", new Persona(persona));
         
-        assertEquals(pers, Db.aziende.get(0));*/
+        Database Db = new Database(azienda);
+        
+        assertEquals("[{\"idazienda\":\"2\",\"azienda\":\"Grifondoro\",\"persone\":[{\"idpersona\":\"2\",\"nome\":\"Harry\",\"cognome\":\"Potter\",\"email\":\"harry.potter@grifondoro.it\"}]]", Db.toJson());
+    }
+    
+    @Test
+    public void testSalva() throws Exception {
+        Persona persona = new Persona(2, "Harry", "Potter", "harry.potter@grifondoro.it");
+        Persona pers2 = new Persona(3, "Ron", "Weasley", "ron.weasley@grifondoro.it");
+        Azienda azienda = new Azienda(2, "Grifondoro", new Persona(persona));
+        
+        Database Db = new Database(azienda);
+        Db.aggiungiPersona(azienda, pers2);
+        Db.salva();
+        
+        assertEquals("[{\"idazienda\":\"2\",\"azienda\":\"Grifondoro\",\"persone\":[{\"idpersona\":\"2\",\"nome\":\"Harry\",\"cognome\":\"Potter\",\"email\":\"harry.potter@grifondoro.it\"},{\"idpersona\":\"3\",\"nome\":\"Ron\",\"cognome\":\"Weasley\",\"email\":\"ron.weasley@grifondoro.it\"}]]", Db.leggi("Database"));
     }
 }

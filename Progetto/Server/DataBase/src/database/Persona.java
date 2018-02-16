@@ -16,6 +16,13 @@ public class Persona  {
         this.email = email;
     }
 
+    public Persona(Persona pers) {
+        this.idpersona = pers.idpersona;
+        this.nome = pers.nome;
+        this.cognome = pers.cognome;
+        this.email = pers.email;
+    }
+    
     public int getIdpersona() {
         return idpersona;
     }
